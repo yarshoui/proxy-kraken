@@ -1,0 +1,12 @@
+{
+  "name": "proxy-kraken",
+  "version": "1.0.0",
+  "description": "proxy-kraken",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Ilya",
+  "license": "ISC"
+}
