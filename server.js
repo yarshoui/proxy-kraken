@@ -1,31 +1,29 @@
-require('dotenv').config(); 
-const config = require('./config/config');
-const express = require('express');
-const request = require('request');
-const cors = require('cors');
-const app = express();
-const port = config.port;
-app.use(cors());
+var express = require('express');
+var axios = require('axios');
+var app = express();
 
-app.use('/', function(req, res) {
+var requestTime = function (req, res, next) {
+  req.requestTime = Date.now();
+  next();
+};
 
-  //Take the baseurl from your api and also supply whatever 
-  //route you use with that url
-  let url =  config.apiUrl + req.url;
-  let query = config.assignKey(req.query);
+var config = {
+    headers: {'Access-Control-Allow-Origin': '*'}
+};
 
-  //Pipe is through request, this will just redirect 
-  //everything from the api to your own server at localhost. 
-  //It will also pipe your queries in the url
-  req.pipe(request({ qs: query , uri: url })).pipe(res);
+app.use(requestTime);
+
+app.get('/', function (req, res) {
+    const pair = req.query.pair || 'xbtusd';
+  axios.get(`https://api.kraken.com/0/public/Depth?pair=${pair}&count=4`, config).then((response) => {
+    const pair = Object.keys(response.data.result)[0];
+    const result = response.data.result;
+    const { asks, bids } = result[pair];
+    const jsonResponse = Object.assign({}, { pair, asks, bids });
+    res.json(jsonResponse);
+  }).catch((err) => {
+      res.send(err);
+  });
 });
 
-
-//Start the server by listening on a port
-app.listen(port, () => {
-  console.log("+---------------------------------------+");
-  console.log("|                                       |");
-  console.log(`|  [\x1b[34mSERVER\x1b[37m] Listening on port: \x1b[36m${port} 🤖  \x1b[37m |`);
-  console.log("|                                       |");
-  console.log("\x1b[37m+---------------------------------------+");
-});
+app.listen(3000);
