@@ -2,18 +2,14 @@
   "name": "proxy-kraken",
   "version": "1.0.0",
   "description": "proxy-kraken",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
   "author": "Ilya",
   "license": "ISC",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/amomentforever0/kraken-proxy-server.git"
-  },
-  "dependencies": {
+   "dependencies": {
     "http": "0.0.0",
     "http-proxy": "^1.18.0",
     "axios": "^0.19.0",
