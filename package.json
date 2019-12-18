@@ -15,5 +15,15 @@
     "express": "^4.17.1",
     "http": "0.0.0",
     "http-proxy": "^1.18.0"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yarshoui/proxy-kraken.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/yarshoui/proxy-kraken/issues"
+  },
+  "homepage": "https://github.com/yarshoui/proxy-kraken#readme"
 }
