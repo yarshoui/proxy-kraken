@@ -7,6 +7,8 @@ var requestTime = function (req, res, next) {
   next();
 };
 
+var port = process.env.PORT || 3000;
+
 var config = {
     headers: {'Access-Control-Allow-Origin': '*'}
 };
@@ -26,4 +28,4 @@ app.get('/', function (req, res) {
   });
 });
 
-app.listen(3000);
+app.listen(port);
