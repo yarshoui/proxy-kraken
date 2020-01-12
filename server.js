@@ -28,4 +28,8 @@ app.get('/api', function (req, res) {
   });
 });
 
+app.get('/*', (req, res) => {
+  res.sendFile(__dirname + '/index.html');
+})
+
 app.listen(port);
