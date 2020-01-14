@@ -16,7 +16,7 @@ var config = {
 app.use(requestTime);
 
 app.get('/api', function (req, res) {
-    const pair = req.query.pair || 'xbtusd';
+    const pair = req.query.pair || 'xbteur';
   axios.get(`https://api.kraken.com/0/public/Depth?pair=${pair}&count=4`, config).then((response) => {
     const pair = Object.keys(response.data.result)[0];
     const result = response.data.result;
