@@ -1,6 +1,6 @@
 window.onload = () => {
     const pairString = 'xbteur';
-    const apiUrl = '';
+    const apiUrl = 'https://proxy-kraken.herokuapp.com/api';
 
     function prepareTableView(response) {
         const {asks, bids} = response.result;
