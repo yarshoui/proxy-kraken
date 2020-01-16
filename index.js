@@ -15,7 +15,7 @@ window.onload = () => {
 
             for(let j=0; j<asks[i].length; j++) {
                 const td = document.createElement('td');
-                td.textContent = ask[i][j];
+                td.textContent = asks[i][j];
                 tr.append(td);
             }
             tableAsk.append(tr);
@@ -26,7 +26,7 @@ window.onload = () => {
 
             for(let j=0; j<bids[i].length; j++) {
                 const td = document.createElement('td');
-                td.textContent = bid[i][j];
+                td.textContent = bids[i][j];
                 tr.append(td);
             }
 
