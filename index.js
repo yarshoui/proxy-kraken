@@ -36,12 +36,14 @@ window.onload = () => {
         }
 
     }
-    fetch(apiUrl, {
-        mode: 'no-cors',        
-    }).then((data) => {
-        return data.json();
-      }).then((data) => {
+    const interval = setInterval(() => {
+        fetch(apiUrl, {
+            mode: 'no-cors',        
+        }).then((data) => {
+            return data.json();
+        }).then((data) => {
             prepareTableView(data);
-        }, 5000);
+        });
+    }, 5000);
 
 }
