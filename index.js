@@ -3,7 +3,7 @@ window.onload = () => {
     const apiUrl = 'https://proxy-kraken.herokuapp.com/api';
 
     function prepareTableView(response) {
-        const {asks, bids} = response.result;
+        const {asks, bids} = response;
         const tableAsk = document.querySelector('.ask');
         const tableBid = document.querySelector('.bid');
         
