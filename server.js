@@ -18,8 +18,9 @@ app.use(requestTime);
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
+const timestamp = new Date().getTime();
 
-app.get('/api', function (req, res) {
+app.get('/api?noCache=' + timestamp, function (req, res) {
     const pair = req.query.pair || 'xbteur';
   axios.get(`https://api.kraken.com/0/public/Depth?pair=${pair}&count=4`, config).then((response) => {
     const pair = Object.keys(response.data.result)[0];
