@@ -1,5 +1,6 @@
 var express = require('express');
 var axios = require('axios');
+var bodyParser = require('body-parser');
 var app = express();
 
 var requestTime = function (req, res, next) {
@@ -14,6 +15,9 @@ var config = {
 };
 
 app.use(requestTime);
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+
 
 app.get('/api', function (req, res) {
     const pair = req.query.pair || 'xbteur';
