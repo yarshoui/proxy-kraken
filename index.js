@@ -38,7 +38,10 @@ window.onload = () => {
     }
     fetch(apiUrl, {
         mode: 'no-cors',        
-    }).then((data)=>{
-        prepareTableView(data);
-    }, 5000);
+    }).then((data) => {
+        return data.body.json();
+      }).then((data) => {
+            prepareTableView(data);
+        }, 5000);
+
 }
