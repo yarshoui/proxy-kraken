@@ -22,7 +22,7 @@ app.get('/api', function (req, res) {
     const result = response.data.result;
     const { asks, bids } = result[pair];
     const jsonResponse = Object.assign({}, { pair, asks, bids });
-    res.json(jsonResponse);
+    return res.status(200).json(jsonResponse);
   }).catch((err) => {
       res.send(err);
   });
