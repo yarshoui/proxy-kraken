@@ -7,34 +7,37 @@ window.onload = () => {
         const tableAsk = document.querySelector('.ask');
         const tableBid = document.querySelector('.bid');
         
-        tableAsk.innerHTML = '';
-        tableBid.innerHTML = '';
-
+        const askFragment = document.createDocumentFragment();
+        const bidFragment = document.createDocumentFragment();
+    
         for (let i=0; i<asks.length; i++){
             const tr = document.createElement('tr');
-
+    
             for (let j=0; j<asks[i].length; j++) {
                 const td = document.createElement('td');
                 td.textContent = asks[i][j];
                 tr.append(td);
             }
-            tableAsk.append(tr);
-            console.log(tableAsk);
+    
+            askFragment.append(tr);
         }
-
+    
         for (let i=0; i<bids.length; i++){
             const tr = document.createElement('tr');
-
+    
             for (let j=0; j<bids[i].length; j++) {
                 const td = document.createElement('td');
                 td.textContent = bids[i][j];
                 tr.append(td);
             }
-
-            tableBid.append(tr);
-            console.log(tableBid);
+    
+            bidFragment.append(tr);
         }
-
+    
+        tableAsk.tbody.innerHTML = askFragment;
+        tableBid.tbody.innerHTML = bidFragment;
+        console.log(tableAsk);
+        console.log(tableBid);
     }
     const interval = setInterval(() => {
         fetch(apiUrl, {
