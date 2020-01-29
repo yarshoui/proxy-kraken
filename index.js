@@ -9,11 +9,6 @@ window.onload = () => {
         
         const askFragment = document.createDocumentFragment();
         const bidFragment = document.createDocumentFragment();
-
-        tableAskBody.innerHTML = '';
-        tableAskBody.appendChild(askFragment);
-        tableBidBody.innerHTML = '';
-        tableBidBody.appendChild(bidFragment);
     
         for (let i=0; i<asks.length; i++){
             const tr = document.createElement('tr');
@@ -39,10 +34,10 @@ window.onload = () => {
             bidFragment.append(tr);
         }
     
-        tableAskBody.innerHTML = askFragment;
-        tableBidBody.innerHTML = bidFragment;
-        console.log(askFragment);
-        console.log(bidFragment);
+        tableAskBody.innerHTML = '';
+        tableAskBody.appendChild(askFragment);
+        tableBidBody.innerHTML = '';
+        tableBidBody.appendChild(bidFragment);
     }
     const interval = setInterval(() => {
         fetch(apiUrl, {
