@@ -9,6 +9,11 @@ window.onload = () => {
         
         const askFragment = document.createDocumentFragment();
         const bidFragment = document.createDocumentFragment();
+
+        tableAskBody.innerHTML = '';
+        tableAskBody.appendChild(askFragment);
+        tableBidBody.innerHTML = '';
+        tableBidBody.appendChild(bidFragment);
     
         for (let i=0; i<asks.length; i++){
             const tr = document.createElement('tr');
