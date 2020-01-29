@@ -36,8 +36,8 @@ window.onload = () => {
     
         tableAskBody.innerHTML = askFragment;
         tableBidBody.innerHTML = bidFragment;
-        console.log(tableAsk);
-        console.log(tableBid);
+        console.log(askFragment);
+        console.log(bidFragment);
     }
     const interval = setInterval(() => {
         fetch(apiUrl, {
