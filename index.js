@@ -4,8 +4,8 @@ window.onload = () => {
 
     function prepareTableView(response) {
         const {asks, bids} = response;
-        const tableAsk = document.querySelector('.ask');
-        const tableBid = document.querySelector('.bid');
+        const tableAskBody = document.querySelector('.ask tbody');
+        const tableBidBody = document.querySelector('.bid tbody');
         
         const askFragment = document.createDocumentFragment();
         const bidFragment = document.createDocumentFragment();
@@ -34,8 +34,8 @@ window.onload = () => {
             bidFragment.append(tr);
         }
     
-        tableAsk.tbody.innerHTML = askFragment;
-        tableBid.tbody.innerHTML = bidFragment;
+        tableAskBody.innerHTML = askFragment;
+        tableBidBody.innerHTML = bidFragment;
         console.log(tableAsk);
         console.log(tableBid);
     }
