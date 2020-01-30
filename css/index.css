@@ -10,6 +10,7 @@
 .ask th, .bid th {
   padding: 10px;
   background: #eee;
+  border: 0px solid #eee;
 }
 
 .navigation_menu{
