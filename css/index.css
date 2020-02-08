@@ -1,3 +1,5 @@
+
+
 .main {
     content: "";
     display: table;
@@ -6,7 +8,49 @@
     color: #ADEFD1FF;
     width: 100%;
 }
+.container{
+  margin: 5px;
+}
+.krakentable{
+  display: inline-block;
+  width: 512px;
+}
+.marketplace{
+  display: inline-block;
+  width: 100%;
+  
+  position: relative;
+}
+.rightpanel{
+  display: inline-block;
+  position: absolute;
+  right: 0px;
+  margin: 5px;
+  width: 330px;
+    
 
+}
+.chart{
+  background-color: cadetblue;
+  width: 330px;
+  height: 160px;
+  border: 1px solid white;
+}
+.tableinfo{
+  display: flex; 
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 18px;
+  margin: 0px;
+}
+
+.inline { 
+  border: 1px solid black;
+  margin:10px;
+  float:left;
+  
+}
 .ask th, .bid th {
   padding: 10px;
   background: #eee;

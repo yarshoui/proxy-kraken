@@ -18,7 +18,6 @@ window.onload = () => {
                 td.textContent = asks[i][j];
                 tr.append(td);
             }
-    
             askFragment.append(tr);
         }
     
@@ -30,10 +29,8 @@ window.onload = () => {
                 td.textContent = bids[i][j];
                 tr.append(td);
             }
-    
             bidFragment.append(tr);
         }
-    
         tableAskBody.innerHTML = '';
         tableAskBody.appendChild(askFragment);
         tableBidBody.innerHTML = '';

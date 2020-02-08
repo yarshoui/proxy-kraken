@@ -8,14 +8,7 @@
       
 </head>
 <body>
-        <style type="text/css">
-            .inline { 
-                 border: 1px solid black;
-                 margin:10px;
-                 float:left;
-                 margin :10px;
-             }
-           </style>
+<div class="container">
 
 <table class="header" width="100%" cellpadding="0" cellspacing="0" border="0" style="min-width: 1000px">
     <tbody>
@@ -67,59 +60,65 @@
         </td>
     </tr>
 </tbody></table>
-    <div>
         
         <div class='separator'>
             <hr />
         </div>
-            
+          
 <table align="center" width="95%" style="max-width:1425px;" cellpadding="0" cellspacing="0" border="0">
     <tbody><tr>
                 <td width="5%" align="center"></td>
-                <td align="center"><img src="/test_pics/image1.png" width="330" height="160" alt="" border="0"></td>
-                <td align="center"><img src="/test_pics/image2.png" width="330" height="160" alt="" border="0"></td>
-                <td align="center"><img src="/test_pics/image3.png" width="330" height="160" alt="" border="0"></td>
+                <td align="center" bgcolor="grey"><img src="/test_pics/image1.png" width="330" height="160" alt="" border="0"></td>
+                <td align="center" bgcolor="grey"><img src="/test_pics/image2.png" width="330" height="160" alt="" border="0"></td>
+                <td align="center" bgcolor="grey"><img src="/test_pics/image3.png" width="330" height="160" alt="" border="0"></td>
                 <td width="5%" align="center"></td>
                 
             </tr>
     </tbody>
 </table>
-<table align="center" width="95%" style="max-width:1425px;" cellpadding="0" cellspacing="0" border="0">
-    <tbody>
-    
-        <tr>
-            <td width="5%" align="center"></td>  
-            <td class="inline">
-                <table class="ask">
-                    <thead>
-                        <tr>
-                            <th>Price</th>
-                            <th>Volume</th>
-                            <th>Timestamp</th>
-                        </tr>
-                    </thead>
-                    <tbody></tbody>
-                </table>  
-            </td>
-            <td class="inline">   
-                <table class="bid">
-                    <thead>
-                        <tr>
-                            <th>Price</th>
-                            <th>Volume</th>
-                            <th>Timestamp</th>
-                        </tr>
-                    </thead>
-                    <tbody></tbody>
-                </table>
-            </td>
-        </tr>
-    </tbody>
-</table>            
-        
-        
+<div class="marketplace">
+    <div class="krakentable">
+        <div class="tableinfo"><a>Kraken</a></div>
+        <table cellpadding="0" cellspacing="0" border="0">
+            <tbody>
+            
+                <tr>
+                    <td align="center"></td>  
+                    <td class="inline">
+                        <table class="ask">
+                            <thead>
+                                <tr>
+                                    <th>Price</th>
+                                    <th>Volume</th>
+                                    <th>Timestamp</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>  
+                    </td>
+                    <td class="inline">   
+                        <table class="bid">
+                            <thead>
+                                <tr>
+                                    <th>Price</th>
+                                    <th>Volume</th>
+                                    <th>Timestamp</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </td>
+                </tr>
+            </tbody>
+        </table>            
+    </div>  
+    <div class="rightpanel">
+        <div class="chart"><a>Chart1</a></div>
+        <div class="chart"><a>Chart2</a></div>
+    </div>      
+</div>        
    
-
+</div>
 <script src="index.js">
 </script>
 </body>
