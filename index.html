@@ -8,7 +8,9 @@
       
 </head>
 <body>
-<div class="container">
+<div class="container"  >
+
+    
 
 <table class="navbar" width="100%" cellpadding="0" cellspacing="0" border="0">
     <tbody><tr>
@@ -16,7 +18,49 @@
             <table align="center" width="95%" style="max-width:1425px;white-space: nowrap;min-width: 1000px" cellpadding="0" cellspacing="0" border="0">
                 <tbody>
                     <tr>
-                        <div class="topnav">
+                        <div id="mySidenav" class="sidenav">
+                            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                            <label for="quantity">Crypto currency pairs:</label>
+                            <select id="cryptocurrency">
+                                <option value="option_one">Select a pair</option>
+                                <option value="XBTUSD">XBT/USD (Bitcoin)</option>
+                                <option value="ETHUSD">ETH/USD (Etherium)</option>
+                                <option value="XRPUSD">XRP/USD (Ripple)</option>
+                                <option value="LTCUSD">LTC/USD (Litecoin)</option>
+                            </select>
+                            <div class='separator'>
+                                <hr />
+                            </div>
+                            <label for="quantity" style="color: white;">Group by min quantity:</label>
+                            <input type="number" id="quantity" name="quantity" value="0" min="1" max="1000" step="0.01">
+                            <div class='separator'>
+                                <hr />
+                            </div>
+                            <label for="Group by min quantity" style="color: white;">Update data every (sec):</label>
+                            <input type="number" id="timeupdate" name="timeupdate" value="0" min="1" max="1000">
+                            <div class='separator'>
+                                <hr />
+                            </div>
+                            <select id="cryptocurrency">
+                                <option value="option_one">Group by min quantity</option>
+                                <option value="XBT">XBT (Bitcoin)</option>
+                                <option value="ETH">ETH (Etherium)</option>
+                                <option value="XRP">XRP (Ripple)</option>
+                                <option value="LTC">LTC (Litecoin)</option>
+                            </select>
+                            <a href="#">About</a>
+                            <a href="#">Services</a>
+                            <a href="#">Clients</a>
+                            <a href="#">Contact</a>
+                        </div>
+                          
+                          <div id="main">
+                            <div onclick="closeNav()" ></div>
+                            <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+                          </div>
+
+                        <div class="topnav" onclick="closeNav()">
+                            
                             <label>CCAggregator.com</label>
                             <a href="#">Market Monitor</a>
                             <a href="#">Constructor</a>
@@ -36,7 +80,7 @@
         </div>
           
 
-<div class="marketplace">
+<div class="marketplace" onclick="closeNav()">
     <div class="krakentable">
         <div class="tableinfo"><a>Kraken</a></div>
         <table cellpadding="0" cellspacing="0" border="0">
@@ -76,6 +120,9 @@
         <div class="chart"><img src="/test_pics/image1.png" width="330" height="160" alt="" border="0"></div>
         <div class="chart"><img src="/test_pics/image2.png" width="330" height="160" alt="" border="0"></div>
         <div class="chart"><img src="/test_pics/image3.png" width="330" height="160" alt="" border="0"></div>
+        <div>
+            <a href="finvix.com/map.ashx?t=sec" id="treemap-small" style="display: inline-block; width: 401px; height: 301px;"><canvas width="401" height="301" class="chart"></canvas></a>
+        </div>
     </div>      
 </div>        
    
@@ -85,6 +132,18 @@
 <script>
     var dt = new Date();
     document.getElementById("datetime").innerHTML = dt.toLocaleString();
+</script>
+
+<script>
+    /* Set the width of the side navigation to 250px */
+    function openNav() {
+      document.getElementById("mySidenav").style.width = "250px";
+    }
+    
+    /* Set the width of the side navigation to 0 */
+    function closeNav() {
+      document.getElementById("mySidenav").style.width = "0";
+    }
     </script>
 </body>
 </html>
