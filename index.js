@@ -46,6 +46,6 @@ window.onload = () => {
         }).then((data) => {
             prepareTableView(data);
         });
-    }, 5000);
+    }, timeUpdate);
 
 }
