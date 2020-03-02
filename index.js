@@ -1,12 +1,14 @@
 window.onload = () => {
-    const pairString = 'xbteur';
+
     const apiUrl = 'https://proxy-kraken.herokuapp.com/api';
+    const timeUpdateInput = document.getElementById('timeupdate');
+    const timeUpdate = (timeUpdateInput.value)*1000;
 
     function prepareTableView(response) {
         const {asks, bids} = response;
         const tableAskBody = document.querySelector('.ask tbody');
         const tableBidBody = document.querySelector('.bid tbody');
-        
+
         const askFragment = document.createDocumentFragment();
         const bidFragment = document.createDocumentFragment();
     
@@ -44,6 +46,6 @@ window.onload = () => {
         }).then((data) => {
             prepareTableView(data);
         });
-    }, 5000);
+    }, timeUpdate);
 
 }

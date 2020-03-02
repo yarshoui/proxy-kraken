@@ -21,9 +21,10 @@
                         <div id="mySidenav" class="sidenav">
                             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
                             <label for="quantity">Crypto currency pairs:</label>
-                            <select id="cryptocurrency">
+                            <select id="cryptocurrencypair">
                                 <option value="option_one">Select a pair</option>
                                 <option value="XBTUSD">XBT/USD (Bitcoin)</option>
+                                <option value="XBTEUR">XBT/EUR (Bitcoin)</option>
                                 <option value="ETHUSD">ETH/USD (Etherium)</option>
                                 <option value="XRPUSD">XRP/USD (Ripple)</option>
                                 <option value="LTCUSD">LTC/USD (Litecoin)</option>
@@ -37,7 +38,7 @@
                                 <hr />
                             </div>
                             <label for="Group by min quantity" style="color: white;">Update data every (sec):</label>
-                            <input type="number" id="timeupdate" name="timeupdate" value="0" min="1" max="1000">
+                            <input type="number" id="timeupdate" name="timeupdate" value="5" min="1" max="1000">
                             <div class='separator'>
                                 <hr />
                             </div>

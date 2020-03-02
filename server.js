@@ -1,3 +1,5 @@
+const pairStringInput = document.getElementById('cryptocurrencypair');
+const pairString = pairStringInput.value;
 var express = require('express');
 var axios = require('axios');
 var bodyParser = require('body-parser');
@@ -19,7 +21,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get('/api', function (req, res) {
-    const pair = req.query.pair || 'xbteur';
+    const pair = req.query.pair || pairString;
   axios.get(`https://api.kraken.com/0/public/Depth?pair=${pair}&count=25`, config).then((response) => {
     const pair = Object.keys(response.data.result)[0];
     const result = response.data.result;

@@ -10,6 +10,8 @@
 }
 .container{
   margin: 5px;
+  display: grid;
+  
 }
 .krakentable{
   display: inline-block;
