@@ -1,8 +1,8 @@
 window.onload = () => {
 
     const apiUrl = 'https://proxy-kraken.herokuapp.com/api';
-    const timeUpdateInput = document.getElementById('timeupdate');
-    const timeUpdate = (timeUpdateInput.value)*1000;
+   /* const timeUpdateInput = document.getElementById('timeupdate');
+    const timeUpdate = (timeUpdateInput.value)*1000;*/
 
     function prepareTableView(response) {
         const {asks, bids} = response;
@@ -46,6 +46,6 @@ window.onload = () => {
         }).then((data) => {
             prepareTableView(data);
         });
-    }, timeUpdate);
+    }, 5000);
 
 }
