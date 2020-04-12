@@ -8,6 +8,50 @@
     color: #ADEFD1FF;
     width: 100%;
 }
+.cookieBanner {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  background: #f8f8f8;
+  border-bottom: 1px solid #ddd;
+  padding: .8em 0;
+}
+
+.cookieBannerText {
+  margin: 0 2%;
+  color: #000;
+  font-size: .9em;
+  line-height: 1.3em;
+}
+.cookieBannerText a {
+  color: #000;
+  text-decoration: underline;
+}
+.cookieBannerAcceptButton {
+  display: flex;
+  align-items: center;
+  margin: 0 2% 0 0;
+  color: #000;
+  font-size: 1em;
+}
+.cookieBannerAcceptButton a span {
+  font-weight: 700;
+}
+.cookieBannerAcceptButton a {
+  display: block;
+  padding: .5em .8em;
+  background: #fff;
+  background-image: linear-gradient(#fff,#f4f4f4);
+  border: 1px solid #eee;
+  border-radius: .2em;
+  cursor: pointer;
+  color: #000;
+  font-size: 1em;
+  text-decoration: none;
+  border-color: #DCDCDC #D2D2D2 #c3c3c3 #d2d2d2;
+}
+
+
 .container{
   margin: 5px;
   display: grid;
