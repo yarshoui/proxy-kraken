@@ -4,6 +4,7 @@ window.onload = () => {
    /* const timeUpdateInput = document.getElementById('timeupdate');
     const timeUpdate = (timeUpdateInput.value)*1000;*/
 
+    
     function prepareTableView(response) {
         const {asks, bids} = response;
         const tableAskBody = document.querySelector('.ask tbody');

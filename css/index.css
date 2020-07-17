@@ -8,6 +8,9 @@
     color: #ADEFD1FF;
     width: 100%;
 }
+.top-menu{
+  border: 2px dotted #000;
+}
 .cookieBanner {
   display: flex;
   flex-direction: row;
