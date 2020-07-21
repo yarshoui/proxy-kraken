@@ -5,8 +5,8 @@ window.onload = () => {
     const timeUpdate = (timeUpdateInput.value)*1000;*/
 
     
-    function prepareTableView(response) {
-        const {asks, bids} = response;
+    function prepareTableView(asks, bids) {
+        
         const tableAskBody = document.querySelector('.ask tbody');
         const tableBidBody = document.querySelector('.bid tbody');
 
@@ -40,13 +40,52 @@ window.onload = () => {
         tableBidBody.appendChild(bidFragment);
     }
     const interval = setInterval(() => {
-        fetch(apiUrl, {
-            mode: 'no-cors',        
-        }).then((data) => {
-            return data.json();
-        }).then((data) => {
-            prepareTableView(data);
-        });
+       getData();
     }, 5000);
+
+
+let sub = {
+  "event": "subscribe",
+  "pair": [
+    "XBT/EUR"
+  ],
+  "subscription": {
+//       "interval":100,
+"depth": 1000,
+    "name": "book"
+  }}
+  
+function getData() {
+  let ws = new WebSocket('wss://ws.kraken.com');
+  ws.onopen = function() {
+    console.log("[open] Connection established 1");
+    ws.send(JSON.stringify(sub))
+  }
+  ws.onerror = function(error) {
+    console.log(`[error] ${error.message}`);
+  }
+  ;
+  let count = 3
+  let newData = []
+  ws.onmessage = function(msg) {
+    newData.push(JSON.parse(msg.data))
+    count--;
+
+    if (count === 0) {
+      ws.close();
+
+      let orderBookAsk = newData[2][1].as.filter(v => v[1] >= 5).slice(0,25);
+      let orderBookBid = newData[2][1].bs.filter(v => v[1] >= 5).slice(0,25);
+
+      prepareTableView(orderBookAsk, orderBookBid)
+    }
+  }
+
+  ws.onclose = function(event) {
+    console.log("WebSocket is closed now.");
+  };
+}
+
+getData();
 
 }
