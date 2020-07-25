@@ -43,7 +43,7 @@ window.onload = () => {
     }
     const interval = setInterval(() => {
        getData();
-    }, 5000);
+    }, 3000);
 
 
 const getSub = () => {
