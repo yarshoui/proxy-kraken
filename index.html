@@ -8,7 +8,7 @@
   <link rel="icon" href="image/favicon.ico" type="image/x-icon"/ >
       
 </head>
-<body onload="startTime()">
+<body >
 <div class="container"  >
     <div class="cookieBanner">
         <div class="cookieBannerText">
@@ -48,11 +48,11 @@
             <hr />
         </div>
         <div class="top-menu"> <span>Trading Pair</span> 
-            <select name="pair">
+            <select name="pair" id='pairfilter'>
               <optgroup label="BTC">
-               <option value="b1">BTC/USD</option>
-               <option value="b2">BTC/EUR</option>
-               <option value="b3">BTC/ETH</option>
+               <option value="BTC/USD">BTC/USD</option>
+               <option value="BTC/EUR">BTC/EUR</option>
+               <option value="BTC/ETH">BTC/ETH</option>
               </optgroup>
               <optgroup label="ETH">
                <option value="e1">ETH/USD</option>
@@ -61,7 +61,7 @@
               </optgroup>
              </select>
              <span>Min Order Qty</span>
-             <input maxlength="25" size="2" value="50">
+             <input id='qtyfilter' value="1">
           </div>         
 
 <div class="marketplace">
@@ -124,12 +124,11 @@
     document.getElementById("datetime").innerHTML = (("0"+dt.getDate()).slice(-2)) +"."+ (("0"+(dt.getMonth()+1)).slice(-2)) +"."+ (dt.getFullYear()) +" "+ (("0"+dt.getHours()).slice(-2)) +":"+ (("0"+dt.getMinutes()).slice(-2))+":"+ (("0"+dt.getSeconds()).slice(-2));
     var t = setTimeout(startTime, 500);
     }
+    startTime();
 </script>
 
 
   
-  <script>
-
-  </script>
+  
 </body>
 </html>

@@ -1,10 +1,12 @@
 window.onload = () => {
-
+// const newData = [];
     const apiUrl = 'https://proxy-kraken.herokuapp.com/api';
    /* const timeUpdateInput = document.getElementById('timeupdate');
     const timeUpdate = (timeUpdateInput.value)*1000;*/
-
+    let qtyFilterInput = document.getElementById('qtyfilter');
+    const pairFilterInput = document.getElementById('pairfilter');
     
+
     function prepareTableView(asks, bids) {
         
         const tableAskBody = document.querySelector('.ask tbody');
@@ -44,22 +46,30 @@ window.onload = () => {
     }, 5000);
 
 
-let sub = {
-  "event": "subscribe",
-  "pair": [
-    "XBT/EUR"
-  ],
-  "subscription": {
-//       "interval":100,
-"depth": 1000,
-    "name": "book"
-  }}
+const getSub = () => {
+  console.log(pairFilterInput.value);
+  return {
+    "event": "subscribe",
+    "pair": [
+      pairFilterInput.value
+     //pairFilterInput
+    ],
+    "subscription": {
+  //       "interval":100,
+  "depth": 1000,
+      "name": "book"
+    }} 
+}
+ 
   
+  qtyFilterInput.addEventListener('onkeydown', (evt) => {
+    console.log(evt);
+  })
 function getData() {
   let ws = new WebSocket('wss://ws.kraken.com');
   ws.onopen = function() {
     console.log("[open] Connection established 1");
-    ws.send(JSON.stringify(sub))
+    ws.send(JSON.stringify(getSub()))
   }
   ws.onerror = function(error) {
     console.log(`[error] ${error.message}`);
@@ -67,15 +77,26 @@ function getData() {
   ;
   let count = 3
   let newData = []
+
+  
+let logCounter=2;
+
   ws.onmessage = function(msg) {
+
+    // console.log('msg', msg);
     newData.push(JSON.parse(msg.data))
+    // console.log('newdata', newData);
     count--;
 
     if (count === 0) {
       ws.close();
 
-      let orderBookAsk = newData[2][1].as.filter(v => v[1] >= 5).slice(0,25);
-      let orderBookBid = newData[2][1].bs.filter(v => v[1] >= 5).slice(0,25);
+      let orderBookAsk = newData[2][1].as.filter(v => parseFloat(v[1]) >= parseFloat(qtyFilterInput.value)).slice(0,25);
+      let orderBookBid = newData[2][1].bs.filter(v => parseFloat(v[1]) >= parseFloat(qtyFilterInput.value)).slice(0,25);
+      // console.log(' newData[2][1]',  newData[2][1]);
+      // console.log('orderBookAsk', orderBookAsk);
+
+      // debugger;
 
       prepareTableView(orderBookAsk, orderBookBid)
     }
