@@ -62,8 +62,8 @@ window.onload = () => {
     };
 
     setInterval(() => {
-      const orderBookAsk = data.as.filter(v => parseFloat(v[1]) >= parseFloat(qtyFilterInput.value)).slice(0,25);
-      const orderBookBid = data.bs.filter(v => parseFloat(v[1]) >= parseFloat(qtyFilterInput.value)).slice(0,25);
+      const orderBookAsk = data.as.filter(v => parseFloat(v[1]) >= parseFloat(qtyFilterInput.value)).slice(0,30);
+      const orderBookBid = data.bs.filter(v => parseFloat(v[1]) >= parseFloat(qtyFilterInput.value)).slice(0,30);
       // console.log('orderBookAsk', orderBookAsk);
       // console.log('orderBookBid', orderBookBid);
       // console.log(data);
