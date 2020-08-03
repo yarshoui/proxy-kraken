@@ -1,115 +1,108 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-  <meta charset="utf-8">
-  <title>Bitcoin & Cryptocurrency Free Aggregator | TradePump.com</title>  
-  <link rel="stylesheet" type="text/css" href="css/index.css">
-  <link rel="icon" href="image/favicon.ico" type="image/x-icon"/ >
-      
+<title>Bitcoin & Cryptocurrency Free Aggregator | TradePump.com</title> 
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href='css/index.css'>
+<link rel="icon" href="image/favicon.ico" type="image/x-icon" >
 </head>
-<body >
-<div class="container"  >
-<table class="navbar" width="100%" cellpadding="0" cellspacing="0" border="0">
-    <tbody><tr>
-        <td>
-            <table align="center" width="95%" style="max-width:1425px;white-space: nowrap;min-width: 1000px" cellpadding="0" cellspacing="0" border="0">
-                <tbody>
-                    <tr>
-                            <div class="topnav">
-                            
-                            <label>TradePump.com</label>
-                            <a href="#">Market Monitor</a>
-                            <a href="#">Multi-Market Monitor</a>
-                            <a href="#">Statistics</a>
-                            <a href="#">Trade History</a>
-                            <p class="clock" style="color:#fff; float: right; padding-right: 10px;">Date/Time: <span id="datetime"></span></p>                          
-                        </div>
-                    </tr>
-                </tbody>
-            </table>
-        </td>
-    </tr>
-</tbody></table>
-        
-        <div class='separator'>
-            <hr />
-        </div>
-        <div class="top-menu"> <span>Trading Pair</span> 
-            <select name="pair" id='pairfilter'>
-              <optgroup label="Bitcoin">
-               <option value="BTC/EUR">BTC/EUR</option>
-               <option value="BTC/USD">BTC/USD</option>
-               <option value="BTC/USDT">BTC/USDT</option>
-              </optgroup>
-              <optgroup label="Ethereum">
-               <option value="ETH/USD">ETH/USD</option>
-               <option value="ETH/EUR">ETH/EUR</option>
-               <option value="ETH/USDT">ETH/USDT</option>
-              </optgroup>
-              <optgroup label="XRP">
-                <option value="XRP/BTC">XRP/BTC</option>
-                <option value="XRP/ETH">XRP/ETH</option>
-                <option value="XRP/EUR">XRP/EUR</option>
-                <option value="XRP/USD">XRP/USD</option>
-                <option value="XRP/USDT">XRP/USDT</option>
-               </optgroup>
-               <optgroup label="Cardano">
-                <option value="ADA/BTC">ADA/BTC</option>
-                <option value="ADA/ETH">ADA/ETH</option>
-                <option value="ADA/EUR">ADA/EUR</option>
-                <option value="ADA/USD">ADA/USD</option>
-               </optgroup>
-               <optgroup label="Bitcoin Cash">
-                <option value="BCH/BTC">BCH/BTC</option>
-                <option value="BCH/ETH">BCH/ETH</option>
-                <option value="BCH/EUR">BCH/EUR</option>
-                <option value="BCH/USD">BCH/USD</option>
-                <option value="BCH/USDT">BCH/USDT</option>
-               </optgroup>
-               <optgroup label="Litecoin">
-                <option value="LTC/BTC">LTC/BTC</option>
-                <option value="LTC/ETH">LTC/ETH</option>
-                <option value="LTC/EUR">LTC/EUR</option>
-                <option value="LTC/USD">LTC/USD</option>
-                <option value="LTC/USDT">LTC/USDT</option>
-               </optgroup>
-               <optgroup label="EOS">
-                <option value="EOS/BTC">EOS/BTC</option>
-                <option value="EOS/ETH">EOS/ETH</option>
-                <option value="EOS/EUR">EOS/EUR</option>
-                <option value="EOS/USD">EOS/USD</option>
-               </optgroup>
-               <optgroup label="DASH">
-                <option value="DASH/BTC">DASH/BTC</option>
-                <option value="DASH/EUR">DASH/EUR</option>
-                <option value="DASH/USD">DASH/USD</option>
-               </optgroup>
-               <optgroup label="Stellar">
-                <option value="XLM/BTC">XLM/BTC</option>
-                <option value="XLM/EUR">XLM/EUR</option>
-                <option value="XLM/USD">XLM/USD</option>
-               </optgroup>
-               <optgroup label="Chainlink">
-                <option value="LINK/BTC">LINK/BTC</option>
-                <option value="LINK/ETH">LINK/ETH</option>
-                <option value="LINK/EUR">LINK/EUR</option>
-                <option value="LINK/USD">LINK/USD</option>
-               </optgroup>
-             </select>
-             <span>Min Order Qty</span>
-             <input id='qtyfilter' value="1">
-          </div>         
+<body>
+  
+ 
+<div class="top"><a class="logo" href="http://tradepump.com">TradePump.com</a></div>
+<div class="adv-top"><span>Advertisement 728x90</span></div>
+<header>
 
-<div class="marketplace">
-    <div class="krakentable">
-        <div class="tableinfo"><a>Kraken</a></div>
+<ul class="nav">
+  <li><a class="menu-button" href="#">Market Monitor</a></li>
+  <li><a class="menu-button" href="#">Constructor</a></li>
+  <li><a class="menu-button" href="#">Statistics</a></li>
+  <li><a class="menu-button" href="#">Trade History</a></li>
+  <li><a class="menu-button" href="#">Info</a></li>
+  <li><a class="menu-button" href="#">About Us</a></li>
+  <li><a class="sign-in-button" href="#">Sign In</a></li>
+  <li><a class="create-account-button" href="#">Create Account</a></li>
+  <li><p class="clock" style="color:#fff; float: right; padding-right: 10px;">Date/Time: <span id="datetime"></span></p></li>
+</ul>
+
+</header>
+ 
+<div class="top-menu"> <span>Trading Pair</span> 
+  <select name="pair" id='pairfilter'>
+    <optgroup label="Bitcoin">
+     <option value="BTC/EUR">BTC/EUR</option>
+     <option value="BTC/USD">BTC/USD</option>
+     <option value="BTC/USDT">BTC/USDT</option>
+    </optgroup>
+    <optgroup label="Ethereum">
+     <option value="ETH/USD">ETH/USD</option>
+     <option value="ETH/EUR">ETH/EUR</option>
+     <option value="ETH/USDT">ETH/USDT</option>
+    </optgroup>
+    <optgroup label="XRP">
+      <option value="XRP/BTC">XRP/BTC</option>
+      <option value="XRP/ETH">XRP/ETH</option>
+      <option value="XRP/EUR">XRP/EUR</option>
+      <option value="XRP/USD">XRP/USD</option>
+      <option value="XRP/USDT">XRP/USDT</option>
+     </optgroup>
+     <optgroup label="Cardano">
+      <option value="ADA/BTC">ADA/BTC</option>
+      <option value="ADA/ETH">ADA/ETH</option>
+      <option value="ADA/EUR">ADA/EUR</option>
+      <option value="ADA/USD">ADA/USD</option>
+     </optgroup>
+     <optgroup label="Bitcoin Cash">
+      <option value="BCH/BTC">BCH/BTC</option>
+      <option value="BCH/ETH">BCH/ETH</option>
+      <option value="BCH/EUR">BCH/EUR</option>
+      <option value="BCH/USD">BCH/USD</option>
+      <option value="BCH/USDT">BCH/USDT</option>
+     </optgroup>
+     <optgroup label="Litecoin">
+      <option value="LTC/BTC">LTC/BTC</option>
+      <option value="LTC/ETH">LTC/ETH</option>
+      <option value="LTC/EUR">LTC/EUR</option>
+      <option value="LTC/USD">LTC/USD</option>
+      <option value="LTC/USDT">LTC/USDT</option>
+     </optgroup>
+     <optgroup label="EOS">
+      <option value="EOS/BTC">EOS/BTC</option>
+      <option value="EOS/ETH">EOS/ETH</option>
+      <option value="EOS/EUR">EOS/EUR</option>
+      <option value="EOS/USD">EOS/USD</option>
+     </optgroup>
+     <optgroup label="DASH">
+      <option value="DASH/BTC">DASH/BTC</option>
+      <option value="DASH/EUR">DASH/EUR</option>
+      <option value="DASH/USD">DASH/USD</option>
+     </optgroup>
+     <optgroup label="Stellar">
+      <option value="XLM/BTC">XLM/BTC</option>
+      <option value="XLM/EUR">XLM/EUR</option>
+      <option value="XLM/USD">XLM/USD</option>
+     </optgroup>
+     <optgroup label="Chainlink">
+      <option value="LINK/BTC">LINK/BTC</option>
+      <option value="LINK/ETH">LINK/ETH</option>
+      <option value="LINK/EUR">LINK/EUR</option>
+      <option value="LINK/USD">LINK/USD</option>
+     </optgroup>
+   </select>
+   <span>Min Order Qty</span>
+   <input id='qtyfilter' value="1">
+</div>         
+
+  <div class="main">
+    
+    <div class="left-div"> <span>Left DIV</span>
+      <div class="krakentable"  style="width:512px;" > 
         <table cellpadding="0" cellspacing="0" border="0">
             <tbody>
             
                 <tr>
                     <td align="center"></td>  
-                    <td class="inline">
+                    <td class="inline" style="border:black solid 1px;">
                         <table class="ask">
                             <thead>
                                 <tr>
@@ -121,7 +114,7 @@
                             <tbody></tbody>
                         </table>  
                     </td>
-                    <td class="inline">   
+                    <td class="inline" style="border:black solid 1px;">   
                         <table class="bid">
                             <thead>
                                 <tr>
@@ -137,25 +130,33 @@
             </tbody>
         </table>            
     </div>  
-    <div class="rightpanel">
-        <div class="chart"><img src="/image/image1.png" width="330" height="160" alt="" border="0"></div>
-        <div class="chart"><img src="/image/image2.png" width="330" height="160" alt="" border="0"></div>
-        <div class="chart"><img src="/image/image3.png" width="330" height="160" alt="" border="0"></div>
-        <div>
-            <img src="/image/ccmap.png" width="401" height="301" alt="" border="0">
-            
-        </div>
-    </div>      
-</div>        
-   
-</div>
+    </div>
+    <div class="right-div"> <span>Right DIV adv. 300x250</span></div>
+        
+  </div>
 
+
+<footer>
+  <ul class="bottom-nav">
+    <li><a class="bottom-menu-button" href="#">Terms and conditions</a></li>
+    <li><a class="bottom-menu-button" href="#">Privacy Policy</a></li>
+    <li><a class="bottom-menu-button" href="#">About Us</a></li>
+    <li><a class="bottom-menu-button" href="#">Contacts</a></li>
+    <li><a class="bottom-menu-button" href="#">Support</a></li>
+    
+  </ul>
+
+
+
+
+
+</footer>
 
 
 <script src="index.js"></script>
 
 
-<script>// Date and Time doen't work once index.js is called ???
+<script>
     function startTime() {
     var dt = new Date();
     document.getElementById("datetime").innerHTML = (("0"+dt.getDate()).slice(-2)) +"."+ (("0"+(dt.getMonth()+1)).slice(-2)) +"."+ (dt.getFullYear()) +" "+ (("0"+dt.getHours()).slice(-2)) +":"+ (("0"+dt.getMinutes()).slice(-2))+":"+ (("0"+dt.getSeconds()).slice(-2));
@@ -165,7 +166,5 @@
 </script>
 
 
-  
-  
 </body>
-</html>
+</html> 
