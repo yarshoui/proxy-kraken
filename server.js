@@ -18,13 +18,20 @@ app.use(requestTime);
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
+function filterArray(array) {
+	const byQty = value => value[1] > 1;
+	const byPrice = value => value[0] > 9285.1;
+
+	return array.filter(byQty).filter(byPrice);
+}
+
 app.get('/api', function (req, res) {
     const pair = req.query.pair || 'xbteur';
   axios.get(`https://api.kraken.com/0/public/Depth?pair=${pair}&count=25`, config).then((response) => {
     const pair = Object.keys(response.data.result)[0];
     const result = response.data.result;
     const { asks, bids } = result[pair];
-    const jsonResponse = Object.assign({}, { pair, asks, bids });
+    const jsonResponse = Object.assign({}, { pair, filterArray(asks), filterArray(bids) });
     return res.status(200).json(jsonResponse);
   }).catch((err) => {
       res.send(err);
