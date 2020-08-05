@@ -105,3 +105,16 @@ footer{
 footer a{
   padding:10px;
 }
+
+.ask tbody > tr > td:nth-child(3),
+.bid tbody > tr > td:nth-child(3),
+thead > tr > th:nth-child(3) {
+  display: none;
+/*   visibility: hidden; */
+  background: red;
+}
+
+/* .bid thead > tr > td:nth-child(3) {
+  display: none;
+background: red
+} */
