@@ -89,7 +89,7 @@
       <option value="LINK/USD">LINK/USD</option>
      </optgroup>
    </select>
-   <span>Min Order Qty</span>
+   <span>Min Trade Qty</span>
    <input id='qtyfilter' value="1">
 </div>         
 
@@ -103,18 +103,21 @@
                 <tr>
                     <td align="center"></td>  
                     <td class="inline" style="border:black solid 1px;">
-                        <table class="ask">
+                        <table class="tradehistory">
                             <thead>
                                 <tr>
-                                    <th>Ask Price</th>
-                                    <th>Volume (Qty)</th>
-                                    <th>Timestamp</th>
+                                    <th>Price</th>
+                                    <th>Volume</th>
+                                    <th>Time</th>
+                                    <th>Side</th>
+                                    <th>OrderType</th>
+                                    <th>Misc</th>
                                 </tr>
                             </thead>
                             <tbody></tbody>
                         </table>  
                     </td>
-                    <td class="inline" style="border:black solid 1px;">   
+<!--                <td class="inline" style="border:black solid 1px;">   
                         <table class="bid">
                             <thead>
                                 <tr>
@@ -125,7 +128,7 @@
                             </thead>
                             <tbody></tbody>
                         </table>
-                    </td>
+                    </td>-->
                 </tr>
             </tbody>
         </table>            
