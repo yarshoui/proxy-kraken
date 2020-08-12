@@ -17,6 +17,7 @@ let tableAskBody;
 let tableBidBody;
 
 let tableTradeBody;
+//let buytradecount;
 
 const subscribeToCurrencyPair = ()=>{
   // console.log(pairFilterInput.value);
@@ -52,6 +53,21 @@ const subscribeToTradeTable = ()=>{
 function resetData(data) {
   data.as = [];
   data.bs = [];
+}
+let buytradecount = 0;
+let selltradecount = 0;
+
+
+function countTradeVolume(array, type){
+  if (array[3] === type) {
+    if (type==='b'){buytradecount = buytradecount + parseFloat(array[1]);
+           console.log("buy counter=" + buytradecount);
+           }
+    if (type==='s'){selltradecount = selltradecount + parseFloat(array[1]);
+           console.log("sell counter=" + selltradecount);
+           }
+                
+     }
 }
 
 function sendSubscription(type='/trade') {
@@ -119,6 +135,8 @@ function populateOrderTable(msg) {
   data.as = newData[1].as;
   data.bs = newData[1].bs;
 }
+
+
 
 function prepareSocket() {
   ws = new WebSocket('wss://ws.kraken.com');
@@ -188,19 +206,28 @@ window.onload = ()=>{
   * @description replace trade table data in trades table
   * @param { price, quantity, timestamp, side, ordertype, misc } trades
   */
+  
 
   const prepareTradeTableView = ({ trade })=>{
     const tradeFragment = document.createDocumentFragment();
     for (let i = 0; i < trade.length; i++) {
       const tr = document.createElement('tr');
+      
+      countTradeVolume(trade[i], 's');
+      countTradeVolume(trade[i], 'b');
+           
 
       for (let j = 0; j < trade[i].length; j++) {
         const td = document.createElement('td');
         td.textContent = trade[i][j];
         tr.append(td);
+        
+
       }
 
       tradeFragment.append(tr);
+
+      
     }
     const children = tableTradeBody.querySelectorAll('tr');
     //const rest = Array.from(children).slice(0,100);
