@@ -108,7 +108,8 @@ footer a{
 
 .ask tbody > tr > td:nth-child(3),
 .bid tbody > tr > td:nth-child(3),
-thead > tr > th:nth-child(3) {
+.ask thead > tr > th:nth-child(3),
+.bid thead > tr > th:nth-child(3){
   display: none;
 /*   visibility: hidden; */
   background: red;
